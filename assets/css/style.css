@@ -207,7 +207,19 @@ body, html {
 #agentmotions {
 	background-image: url("../img/websites.png");
 	background-size: cover;
+	transition: 1s;
+	-webkit-transition: 1s;
+	-o-transition: 1s;
+	-moz-transition: 1s;
+	-ms-transition: 1s;
+
 }
+
+#agentmotions:hover {
+	background-image: url("../img/2829hillside.gif");
+}
+
+
 
 #deca {
 	background-image: url("../img/deca.jpg");
