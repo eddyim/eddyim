@@ -1,38 +1,57 @@
 $(document).ready(function() {
-
-	 var navBarPosition = $(".navbar-container").offset().top;
-	 $(window).scroll(function() {
-	  
-	  var currentScroll = $(window).scrollTop();
-	  
-	  console.log(currentScroll);
-	  if (currentScroll < navBarPosition) {
-	    $(".navbar-container").removeClass("nav-bar-fixed");
-	  } else {
-	    $(".navbar-container").addClass("nav-bar-fixed");
-	  }
-
+	$(".menu-item").click(function() {
+		var menuNum = parseInt($(this).attr("id"));
+		console.log(menuNum);
+		var currentState = getState(menuNum);
+		var sectionToToggle = getSection(menuNum);
+		console.log(currentState);
+		console.log(sectionToToggle)
+		if (currentState === "none") {
+			$(".toggle-section").slideUp();
+			$(sectionToToggle).slideDown();
+		} else {
+			$(sectionToToggle).slideUp();
+		}
 	});
 
-	 $(".form-button").click(function(){
-	 	$("#modal").fadeIn();
-	 });
+	function getState(number) {
+		switch(number) {
+			case 1:
+				return $("#current").css("display");
+				break;
+			case 2:
+				return $("#previous").css("display");
+				break;
+			case 3:
+				return $("#experience").css("display");
+				break;
+			case 4:
+				return $("#projects").css("display");
+				break;
+			case 5:
+				return $("#blog").css("display");
+				break;
 
-	 $("#modal").click(function(){
-	 	$("#modal").fadeOut();
-	 })
-	 $(function() {
- 		 $('a[href*="#"]:not([href="#"])').click(function() {
-    		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-     		 var target = $(this.hash);
-    		 target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-     		 if (target.length) {
-       			 $('html, body').animate({
-      			    scrollTop: target.offset().top
-    			    }, 1000);
-    	    return false;
-      }
-    }
-  });
-});
+		}
+	}
+
+	function getSection(number) {
+		switch(number) {
+			case 1:
+				return "#current";
+				break;
+			case 2:
+				return "#previous";
+				break;
+			case 3:
+				return "#experience";
+				break;
+			case 4:
+				return "#projects";
+				break;
+			case 5:
+				return "#blog";
+				break;
+			}
+	}
 });
