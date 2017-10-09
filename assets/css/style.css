@@ -81,6 +81,11 @@ li {
 
 .toggle-section {
 	display: none;
+	margin-bottom: 50px auto;
+}
+
+.toggle-section h2 {
+	margin-top: 0px;
 }
 
 #menu {
