@@ -14,6 +14,7 @@ $(document).ready(function() {
 		}
 	});
 
+
 	function getState(number) {
 		switch(number) {
 			case 1:

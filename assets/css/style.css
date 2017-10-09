@@ -191,3 +191,27 @@ li {
   }
 }
 
+/* Fade in animation */ 
+#intro h1 {
+	animation: fadein 1.5s;
+}
+
+#intro p {
+	animation: fadein 1.5s;
+}
+
+#social-icons {
+	animation: fadein 1.5s;
+}
+
+.menu-item {
+	animation: fadein 4s;
+}
+
+
+
+@keyframes fadein {
+  from { opacity: 0}
+  to   { opacity: 1}
+}
+
